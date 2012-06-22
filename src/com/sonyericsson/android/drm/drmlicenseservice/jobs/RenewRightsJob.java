@@ -102,7 +102,7 @@ public class RenewRightsJob extends StackableJob {
                 DataHandlerCallback callback = new DataHandlerCallback() {
                     public boolean handleData(byte[] buffer, int length) {
                         try {
-                            FileOutputStream fos = null;
+                            FileOutputStream fos = new FileOutputStream(callbackFile, true);
                             Context context = mJobManager.getContext();
                             File directory = context.getExternalFilesDir(null);
                             if (directory != null) {
